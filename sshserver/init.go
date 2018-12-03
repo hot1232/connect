@@ -6,7 +6,6 @@ import (
 	"connect/conf"
 	"connect/lib"
 	"github.com/kr/pty"
-	"io"
 	"golang.org/x/crypto/ssh"
 )
 
@@ -67,9 +66,15 @@ func StartSession(s Session) {
 
 	s.Write([]byte(lib.Title()))
 	s.Write([]byte(lib.Usage()))
-	s.Write([]byte("Chose >"))
+	s.Write([]byte(lib.Prompt("")))
 	ptyReq, winCh, isPty := s.Pty()
 	if isPty{
+		msg := &EnvMsg{
+			Key: "TERM",
+			Value: ptyReq.Term,
+		}
+		s.SendRequest("env",true,ssh.Marshal(msg))
+
 		pty1,tty,err := pty.Open()
 
 		if err != nil{
@@ -85,26 +90,31 @@ func StartSession(s Session) {
 		}()
 
 		go func(){
-			io.Copy(pty1,s)
+			//io.Copy(pty1,s) //stdin
+			copyBuffer(pty1,s,nil,writeCallBack,s)
 		}()
 
 		go func(){
-			io.Copy(s,pty1)
+			//io.Copy(s,pty1) //stdout
+			copyBuffer(s,pty1,nil,readCallBack,s)
 		}()
 
+		select {
 
-		msg := &EnvMsg{
-			Key: "TERM",
-			Value: ptyReq.Term,
 		}
-		s.SendRequest("env",true,ssh.Marshal(msg))
-
-
-
-		pty1.WriteString("hello!!")
 
 	} else {
 		log.Fatalf("is not pty")
 	}
 
+}
+
+func writeCallBack(s Session, writedStr []byte)(error){
+	log.Printf("user: %v Write data: %v",s.User(),string(writedStr))
+	return nil
+}
+
+func readCallBack(s Session, writedStr []byte)(error){
+	log.Printf("user: %v Recv data: %v",s.User(),string(writedStr))
+	return nil
 }

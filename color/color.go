@@ -15,6 +15,7 @@ const (
 	TextMagenta
 	TextCyan
 	TextWhite
+	TextTitle = 42
 )
 
 func Black(str string) string {
@@ -49,6 +50,10 @@ func White(str string) string {
 	return textColor(TextWhite, str)
 }
 
+func Title(str string) string{
+	return textColor(TextTitle,str)
+}
+
 func textColor(color int, str string) string {
 	if IsWindows() {
 		return str
@@ -71,6 +76,8 @@ func textColor(color int, str string) string {
 		return fmt.Sprintf("\x1b[0;%dm%s\x1b[0m", TextCyan, str)
 	case TextWhite:
 		return fmt.Sprintf("\x1b[0;%dm%s\x1b[0m", TextWhite, str)
+	case 42:
+		return fmt.Sprintf("\x1b[1;32m%s\x1b[0m",str)
 	default:
 		return str
 	}
