@@ -1,0 +1,101 @@
+{
+	"ImportPath": "connect",
+	"GoVersion": "go1.9",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/auth0/go-jwt-middleware",
+			"Rev": "5493cabe49f7bfa6e2ec444a09d334d90cd4e2bd"
+		},
+		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v3.1.0",
+			"Rev": "dbeaa9332f19a944acb5736b4456cfcc02140e29"
+		},
+		{
+			"ImportPath": "github.com/emicklei/go-restful",
+			"Comment": "v2.8.0-1-g84db0d0",
+			"Rev": "84db0d02230aa550f3ec148981e4d75cf316e123"
+		},
+		{
+			"ImportPath": "github.com/emicklei/go-restful/log",
+			"Comment": "v2.8.0-1-g84db0d0",
+			"Rev": "84db0d02230aa550f3ec148981e4d75cf316e123"
+		},
+		{
+			"ImportPath": "github.com/go-sql-driver/mysql",
+			"Comment": "v1.3-50-g9181e3a",
+			"Rev": "9181e3a86a19bacd63e68d43ae8b7b36320d8092"
+		},
+		{
+			"ImportPath": "github.com/golang/glog",
+			"Rev": "23def4e6c14b4da8ac2ed8007337bc5eb5007998"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm",
+			"Comment": "v1.9.1-5-g9044197",
+			"Rev": "9044197ef935c0969d94cbcfba55ccb94d269bed"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm/dialects/mysql",
+			"Comment": "v1.9.1-5-g9044197",
+			"Rev": "9044197ef935c0969d94cbcfba55ccb94d269bed"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/inflection",
+			"Rev": "04140366298a54a039076d798123ffa108fff46c"
+		},
+		{
+			"ImportPath": "github.com/json-iterator/go",
+			"Comment": "1.1.5-11-gd05f387",
+			"Rev": "d05f387f50c0c406889b62cb5ec51c76a64d89ee"
+		},
+		{
+			"ImportPath": "github.com/modern-go/concurrent",
+			"Comment": "1.0.3",
+			"Rev": "bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94"
+		},
+		{
+			"ImportPath": "github.com/modern-go/reflect2",
+			"Comment": "v1.0.1",
+			"Rev": "94122c33edd36123c84d5368cfb2b69df93a0ec8"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/curve25519",
+			"Rev": "e84da0312774c21d64ee2317962ef669b27ffb41"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/ed25519",
+			"Rev": "e84da0312774c21d64ee2317962ef669b27ffb41"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/ed25519/internal/edwards25519",
+			"Rev": "e84da0312774c21d64ee2317962ef669b27ffb41"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/internal/chacha20",
+			"Rev": "e84da0312774c21d64ee2317962ef669b27ffb41"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/internal/subtle",
+			"Rev": "e84da0312774c21d64ee2317962ef669b27ffb41"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/poly1305",
+			"Rev": "e84da0312774c21d64ee2317962ef669b27ffb41"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/ssh",
+			"Rev": "e84da0312774c21d64ee2317962ef669b27ffb41"
+		},
+		{
+			"ImportPath": "golang.org/x/net/websocket",
+			"Rev": "fae4c4e3ad76c295c3d6d259f898136b4bf833a8"
+		},
+		{
+			"ImportPath": "gopkg.in/yaml.v2",
+			"Comment": "v2.2.2",
+			"Rev": "51d6538a90f86fe93ac480b35f37b2be17fef232"
+		}
+	]
+}

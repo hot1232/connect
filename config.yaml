@@ -1,0 +1,63 @@
+maxconn: 100
+keepalive: 3600
+verbose: true
+debug: true
+logintitle: wellcome to connect server
+ps1: PS1=[\e[31;1m\]\u@\h \[\e[0m\]\[\e[32;1m\]\[\e[0m\]:\[\e[35;1m\]\w\[\e[0m\]\$]
+sshd:
+  listenaddr: 0.0.0.0
+  listenport: 3344
+  timeout: 600
+  hostkey: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpAIBAAKCAQEA7ikKepdmMGTjCOmUpE/iJYWRBc2Hf707xZaEY7HfPqeyjZnx
+    9tR11NfFnKsqcqYTvZuyFrCuAOVckRqxajglmVxuTJGZfV7cVwHV8GOUOG3xx3cD
+    1GCzK6B2sjeD4ZtrniZ1Q4UMhKEY819NB+cXpTZVLL58SzCM6tNytWAFTxbK4AGt
+    l9aU/PnScCWcH0jnEJmb0h2+OGB95eElbrw7Cg1ncbYYTiZyzY+qdggKjqIwzvOD
+    S98cm2UDF7SZkYbNIKaAHzJbG0SDhBxAI7XtnGEOQKJzPO4lsQXLYN6hM0kdLFRK
+    EWsGGjMhKBgjGlA9cJxA+EmQ7WG4QOrz+T+s6QIDAQABAoIBAGxz3AW/dBWNm6Wv
+    WLUKe51Cmave0FlnPxTXWipcEaFilHjPJdSVI6NtLtwNRiM3Zb3ubMbQZiyaRfD+
+    CtSoBNc1tDTCCPeCfyxP9bCmaBTaXEPM+r13259+Tw8RIMlYEUXPlY7Nw8mR4t7R
+    Ay8aGTZu65KYm9lRnppA9/eIZmKAyba5WugBx4uxJwbiZzhIQFOiZQzUpBlc35Jx
+    rb1u609KtvToIzCI4HJj46ZqdvjbABzEPfgA6IztkDJRCaSw5Zps57XDpx8Q7W3b
+    4K1j1dw6vM8rlzSuxoh9JoJ5tsMAsAuuM/ux8XyPzaSVOFMeHtquAUU8ytJbFWNE
+    ovYHgJECgYEA9/98YYcU0H84QdP6+K5gJOWdgQIqVPGWMSU7ecrFwuZ5dhPTOv9g
+    DYSahyO77ENFjzFkVnLZenKQHd0H0htaDqTZw2IwGHPVemYoEZSX4U5Q4nXa65sx
+    ubKcIieIM6FeIuEMkB7bj6fGY1v6gftmhm4ZV2CUc6mDt0WLCD7ROycCgYEA9dhL
+    OkfAtSzyKUwJTb3XOE3kC9vpPzo5SlJ+5Ygy65Q9hsw0zNUSFDZtJJsFJlREFxEM
+    ssx5OZiIVhTjGFHRHKzYE31mejc73165JNaEB26esXRPc92pYrOdpuTcMuzQf0iE
+    FWgG/qSlZ88KwAhiKqIw351IWHXPC83k7alBIW8CgYEAv+3aNSB122aaA1grQ4qw
+    nd2Wp+ElIdhWhHJsNTXZF52HIvr03xQFInEdprjhF1h43Pk8zirUZQ+EuZf2FYVV
+    jT/HyI6U6le7P58QI4r8gEI8FwdfBjh1o2G3tDckEdExKY1CS8eV5PfTcdIdbbtC
+    /Yb31cfJHDp01cHcd+UlyMECgYEA6Oke9DsQVlUbo4ZW9iEZ6kzY9WdFxlIZ/tDD
+    SiBL5aZO2AtVJo3ij+W0Z066hUKmM5hCiI5xduCMockuEVdKHrmeCHDwim8TuR5b
+    l4voD8Z8cDB6KZJiLJFwlbIS7+gt67i+8izZG5zO29dqHt6SakO4u9Gdvbj3C/7n
+    mUWV398CgYB229viw2oC9mr+QPNL0fSJLsKKJZa9JE5tno0khPZntuWzZb/l1d6S
+    mZLNUsq21YihL9tZvbJGrUE5p8JutH/GhFFWnE+jIidQc+9x3eaoOXGvnGb31uN3
+    Z+abrBQKOM6jvV6OQkV46AtlptT/dVEEDCL59m3FY9oXNRFruQjzCQ==
+    -----END RSA PRIVATE KEY-----
+  authorisedkeys: |
+    this is a authorized keys
+    test
+  auth:
+    provider: ldap
+    url: ldap://192.168.1.7
+    auth: true
+    username: jumpserver
+    password: 0PXUwyybcJ5V
+cache:
+  path: cache.data
+  format: msgpack
+audit:
+  dbtype: mysql
+  dbhost: 127.0.0.1
+  dbport: 3306
+  dbuser: connect
+  dbpassword: connect
+  dbname: connect
+api:
+  port: 8080
+  address: 0.0.0.0
+websocket:
+  port: 8081
+  address: 0.0.0.0
